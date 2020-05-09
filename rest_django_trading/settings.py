@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'rest_django_trading.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'moneyfx',
         'USER': 'postgres',
-	'PASSWORD': os.environ.get('POSTGRES_PASSWORD', None),
-        'HOST': os.environ.get('TRADING_PG_HOST', None),
+	'PASSWORD': os.environ.get('POSTGRES_PASSWORD', ''),
+        'HOST': os.environ.get('MONEYFX_PG_HOST', 'db'),
         'PORT': 5432,
     }
 }
