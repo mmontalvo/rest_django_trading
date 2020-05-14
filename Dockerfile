@@ -6,4 +6,6 @@ COPY requirements.txt /rest_django_trading/
 RUN pip install -r requirements.txt
 ADD . /rest_django_trading/
 
-CMD python manage.py runserver 0.0.0.0:8100
+EXPOSE 8100
+
+CMD ["gunicorn", "--chdir", "rest_django_trading", "--bind", ":8100", "rest_django_trading.wsgi:application"]
