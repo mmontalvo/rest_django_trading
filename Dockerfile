@@ -6,6 +6,6 @@ COPY requirements.txt /rest_django_trading/
 RUN pip install -r requirements.txt
 ADD . /rest_django_trading/
 
-EXPOSE 8100
+EXPOSE 8080
 
-CMD ["gunicorn", "--chdir", "rest_django_trading", "--bind", ":8100", "rest_django_trading.wsgi:application"]
+CMD ["gunicorn", "--chdir", "rest_django_trading", "--bind", ":8080", "rest_django_trading.wsgi:application"]
